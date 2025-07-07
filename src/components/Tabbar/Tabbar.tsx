@@ -1,6 +1,5 @@
 import { useState, type FC } from 'react';
 import './Tabbar.scss';
-import { Trash2 } from 'lucide-react';
 
 type Filter = 'all' | 'active' | 'completed';
 
@@ -49,10 +48,10 @@ export const Tabbar: FC = () => {
           </label>
         </div>
       </div>
-      <button className="tabbar__btn-clear">
-        <Trash2 size={24} color="#000" />
-        Clear completed
-      </button>
+      <div className="tabbar__info">
+        <button className="tabbar__btn-clear">Clear completed</button>
+        <p className="tabbar__title">2 items left</p>
+      </div>
     </div>
   );
 };
