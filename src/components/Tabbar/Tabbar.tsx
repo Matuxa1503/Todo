@@ -13,7 +13,6 @@ export const Tabbar: FC = () => {
 
   return (
     <div className="tabbar">
-      <button className="tabbar__btn">+</button>
       <div className="tabbar__radio-group">
         <div className="tabbar__radio">
           <label className="tabbar__label" htmlFor="all">
