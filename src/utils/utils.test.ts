@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { it, expect } from 'vitest';
 import { getFilteredTasks } from './utils';
 
 const mockTasks = [
