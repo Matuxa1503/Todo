@@ -19,6 +19,7 @@ export const TaskInput: FC<TaskInputProps> = ({ addTask }) => {
     };
 
     addTask(data);
+    setValue('');
   };
 
   return (
