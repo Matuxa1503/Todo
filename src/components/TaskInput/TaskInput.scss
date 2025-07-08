@@ -1,0 +1,28 @@
+@use '../../variables.scss' as v;
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  &__input {
+    font-size: 2rem;
+    padding: 0.5rem;
+    border: 0.3rem solid v.$primary-color;
+    outline: none;
+    border-radius: 1rem;
+  }
+
+  &__btn {
+    font-size: 2.5rem;
+    z-index: 10;
+    color: #fff;
+    width: 12%;
+    padding: 0.5rem;
+    border-radius: 4rem;
+    cursor: pointer;
+    background-color: v.$primary-color;
+    box-shadow: 0px 0px 0.3rem v.$primary-shadow-color;
+  }
+}

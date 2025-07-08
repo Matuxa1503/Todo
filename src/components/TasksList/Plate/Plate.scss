@@ -1,0 +1,23 @@
+.plate {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #d8d8d8;
+  padding: 0.6rem 1.6rem;
+  border-radius: 0.9rem;
+  font-weight: 700;
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    width: 19.5rem;
+  }
+
+  & .crossed {
+    text-decoration: line-through;
+    color: gray;
+  }
+}
