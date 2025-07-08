@@ -11,6 +11,7 @@ interface TasksListProps {
 export const TasksList: FC<TasksListProps> = ({ tasks, handleToggleTask }) => {
   return (
     <div className="blockTasks">
+      {tasks.length === 0 && <p className="plug">No Tasks</p>}
       {tasks.map((task) => (
         <Plate key={task.id} task={task} handleToggleTask={handleToggleTask} />
       ))}
