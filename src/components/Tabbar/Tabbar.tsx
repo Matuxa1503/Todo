@@ -4,9 +4,10 @@ import './Tabbar.scss';
 type Filter = 'all' | 'active' | 'completed';
 type TabbarProps = {
   counter: number;
+  removeCompletedTask: () => void;
 };
 
-export const Tabbar: FC<TabbarProps> = ({ counter }) => {
+export const Tabbar: FC<TabbarProps> = ({ counter, removeCompletedTask }) => {
   const [stateRadio, setStateRadio] = useState<Filter>('all');
 
   const changeRadio = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +52,9 @@ export const Tabbar: FC<TabbarProps> = ({ counter }) => {
         </div>
       </div>
       <div className="tabbar__info">
-        <button className="tabbar__btn-clear">Clear completed</button>
+        <button onClick={() => removeCompletedTask()} className="tabbar__btn-clear">
+          Clear completed
+        </button>
         <p className="tabbar__title">{counter} items left</p>
       </div>
     </div>

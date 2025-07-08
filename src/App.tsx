@@ -25,6 +25,11 @@ function App() {
     setTasks(updateTask);
   };
 
+  const removeCompletedTask = () => {
+    const arr = tasks.filter((item) => !item.isCompleted);
+    setTasks(arr);
+  };
+
   useEffect(() => {
     console.log(tasks);
 
@@ -38,7 +43,7 @@ function App() {
         <Header />
         <TaskInput addTask={addTask} />
         <TasksList tasks={tasks} handleToggleTask={handleToggleTask} />
-        <Tabbar counter={counter} />
+        <Tabbar counter={counter} removeCompletedTask={removeCompletedTask} />
       </div>
     </div>
   );
