@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import './TaskInput.scss';
-import type { Idata } from '../interfaces';
+import type { Idata } from '../../interfaces';
 
 interface TaskInputProps {
   addTask: (data: Idata) => void;

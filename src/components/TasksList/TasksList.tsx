@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import './TasksList.scss';
 import { Plate } from './Plate/Plate';
-import type { Idata } from '../interfaces';
+import type { Idata } from '../../interfaces';
 
 interface TasksListProps {
   tasks: Idata[];

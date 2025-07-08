@@ -4,11 +4,13 @@ import { TasksList } from './components/TasksList/TasksList';
 import { TaskInput } from './components/TaskInput/TaskInput';
 import './App.scss';
 import { useEffect, useState } from 'react';
-import type { Idata } from './components/interfaces';
+import type { Idata } from './interfaces';
+import type { Filter } from './types';
 
 function App() {
   const [tasks, setTasks] = useState<Idata[]>([{ isCompleted: true, task: '124dsf', id: Date.now() }]);
   const [counter, setCounter] = useState<number>(0);
+  const [stateRadioBtn, setStateRadioBtn] = useState<Filter>('all');
 
   const addTask = (data: Idata) => {
     setTasks((prev) => [...prev, data]);
@@ -31,8 +33,10 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(tasks);
+    console.log(stateRadioBtn);
+  }, [stateRadioBtn]);
 
+  useEffect(() => {
     const uncompletedTasks = tasks.filter((item) => !item.isCompleted).length;
     setCounter(uncompletedTasks);
   }, [tasks]);
@@ -43,7 +47,7 @@ function App() {
         <Header />
         <TaskInput addTask={addTask} />
         <TasksList tasks={tasks} handleToggleTask={handleToggleTask} />
-        <Tabbar counter={counter} removeCompletedTask={removeCompletedTask} />
+        <Tabbar counter={counter} removeCompletedTask={removeCompletedTask} setStateRadioBtn={setStateRadioBtn} />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import './Plate.scss';
 import { CircleCheck } from 'lucide-react';
-import type { Idata } from '../../interfaces';
+import type { Idata } from '../../../interfaces';
 
 type PlateProps = {
   task: Idata;
