@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import type { Idata } from './components/interfaces';
 
 function App() {
-  const [tasks, setTasks] = useState<Idata[]>([{ isCompleted: true, task: '124dsf' }]);
+  const [tasks, setTasks] = useState<Idata[]>([{ isCompleted: true, task: '124dsf', id: Date.now() }]);
   const [counter, setCounter] = useState<number>(0);
 
   const addTask = (data: Idata) => {

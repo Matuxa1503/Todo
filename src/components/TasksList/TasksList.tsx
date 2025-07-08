@@ -10,8 +10,8 @@ interface TasksListProps {
 export const TasksList: FC<TasksListProps> = ({ tasks }) => {
   return (
     <div className="blockTasks">
-      {tasks.map((task, ind) => (
-        <Plate key={ind} task={task} />
+      {tasks.map((task) => (
+        <Plate key={task.id} task={task} />
       ))}
     </div>
   );

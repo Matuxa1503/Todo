@@ -15,6 +15,7 @@ export const TaskInput: FC<TaskInputProps> = ({ addTask }) => {
     const data = {
       isCompleted: false,
       task: value,
+      id: Date.now(),
     };
 
     addTask(data);
