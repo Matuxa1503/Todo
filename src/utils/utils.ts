@@ -1,5 +1,5 @@
-import type { Idata } from './interfaces';
-import type { Filter } from './types';
+import type { Idata } from '../interfaces';
+import type { Filter } from '../types';
 
 export const getFilteredTasks = (tasks: Idata[], stateRadioBtn: Filter): Idata[] => {
   if (stateRadioBtn === 'active') {

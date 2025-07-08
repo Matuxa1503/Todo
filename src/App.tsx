@@ -6,7 +6,7 @@ import './App.scss';
 import { useEffect, useState } from 'react';
 import type { Idata } from './interfaces';
 import type { Filter } from './types';
-import { getFilteredTasks } from './utils';
+import { getFilteredTasks } from './utils/utils';
 
 function App() {
   const [tasks, setTasks] = useState<Idata[]>([]);
