@@ -8,6 +8,7 @@ import type { Idata } from './components/interfaces';
 
 function App() {
   const [tasks, setTasks] = useState<Idata[]>([{ isCompleted: true, task: '124dsf' }]);
+  const [counter, setCounter] = useState<number>(0);
 
   const addTask = (data: Idata) => {
     setTasks((prev) => [...prev, data]);
@@ -15,6 +16,9 @@ function App() {
 
   useEffect(() => {
     console.log(tasks);
+
+    const uncompletedTasks = tasks.filter((item) => !item.isCompleted).length;
+    setCounter(uncompletedTasks);
   }, [tasks]);
 
   return (
@@ -23,7 +27,7 @@ function App() {
         <Header />
         <TaskInput addTask={addTask} />
         <TasksList tasks={tasks} />
-        <Tabbar />
+        <Tabbar counter={counter} />
       </div>
     </div>
   );

@@ -2,8 +2,11 @@ import { useState, type FC } from 'react';
 import './Tabbar.scss';
 
 type Filter = 'all' | 'active' | 'completed';
+type TabbarProps = {
+  counter: number;
+};
 
-export const Tabbar: FC = () => {
+export const Tabbar: FC<TabbarProps> = ({ counter }) => {
   const [stateRadio, setStateRadio] = useState<Filter>('all');
 
   const changeRadio = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +52,7 @@ export const Tabbar: FC = () => {
       </div>
       <div className="tabbar__info">
         <button className="tabbar__btn-clear">Clear completed</button>
-        <p className="tabbar__title">2 items left</p>
+        <p className="tabbar__title">{counter} items left</p>
       </div>
     </div>
   );
