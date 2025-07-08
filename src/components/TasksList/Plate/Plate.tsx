@@ -5,16 +5,18 @@ import type { Idata } from '../../interfaces';
 
 type PlateProps = {
   task: Idata;
+  handleToggleTask: (id: number) => void;
 };
 
-export const Plate: FC<PlateProps> = ({ task }) => {
+export const Plate: FC<PlateProps> = ({ task, handleToggleTask }) => {
   return (
     <div className="plate">
-      {task.isCompleted ? (
-        <CircleCheck className="plate__icon" size={40} color="green" />
-      ) : (
-        <CircleCheck className="plate__icon" size={40} color="gray" />
-      )}
+      <CircleCheck
+        className="plate__icon"
+        size={50}
+        color={`${task.isCompleted ? 'green' : 'gray'}`}
+        onClick={() => handleToggleTask(task.id)}
+      />
       <p className={`plate__title ${task.isCompleted ? 'crossed' : ''}`}>{task.task}</p>
     </div>
   );

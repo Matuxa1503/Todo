@@ -14,6 +14,17 @@ function App() {
     setTasks((prev) => [...prev, data]);
   };
 
+  const handleToggleTask = (id: number) => {
+    const updateTask = tasks.map((item) => {
+      if (item.id === id) {
+        return { ...item, isCompleted: !item.isCompleted };
+      }
+      return item;
+    });
+
+    setTasks(updateTask);
+  };
+
   useEffect(() => {
     console.log(tasks);
 
@@ -26,7 +37,7 @@ function App() {
       <div className="content">
         <Header />
         <TaskInput addTask={addTask} />
-        <TasksList tasks={tasks} />
+        <TasksList tasks={tasks} handleToggleTask={handleToggleTask} />
         <Tabbar counter={counter} />
       </div>
     </div>
