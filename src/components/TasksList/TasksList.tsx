@@ -1,21 +1,18 @@
 import { type FC } from 'react';
 import './TasksList.scss';
 import { Plate } from './Plate/Plate';
+import type { Idata } from '../interfaces';
 
-export const TasksList: FC = () => {
+interface TasksListProps {
+  tasks: Idata[];
+}
+
+export const TasksList: FC<TasksListProps> = ({ tasks }) => {
   return (
     <div className="blockTasks">
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
-      <Plate />
+      {tasks.map((task, ind) => (
+        <Plate key={ind} task={task} />
+      ))}
     </div>
   );
 };
