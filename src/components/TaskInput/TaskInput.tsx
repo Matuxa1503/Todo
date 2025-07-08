@@ -12,14 +12,16 @@ export const TaskInput: FC<TaskInputProps> = ({ addTask }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const data = {
-      isCompleted: false,
-      task: value,
-      id: Date.now(),
-    };
+    if (value.length > 0) {
+      const data = {
+        isCompleted: false,
+        task: value,
+        id: Date.now(),
+      };
 
-    addTask(data);
-    setValue('');
+      addTask(data);
+      setValue('');
+    }
   };
 
   return (
